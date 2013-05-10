@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <NumberPicker
+        android:id="@+id/tbf_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="97dp"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:id="@+id/txt_number_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tbf_picker"
+        android:layout_marginBottom="53dp"
+        android:layout_marginRight="19dp"
+        android:layout_toLeftOf="@+id/tbf_picker"
+        android:text="Choose TBF" />
+
+    <TextView
+        android:id="@+id/text_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_start_tracking"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="31dp"
+        android:text="Latitude" />
+
+    <TextView
+        android:id="@+id/text_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_lat"
+        android:layout_alignTop="@+id/long_value"
+        android:text="Longitude" />
+
+    <Button
+        android:id="@+id/btn_stop_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_start_tracking"
+        android:layout_toRightOf="@+id/btn_start_tracking"
+        android:enabled="false"
+        android:text="StopTracking" />
+
+    <Button
+        android:id="@+id/btn_start_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbf_picker"
+        android:layout_marginTop="19dp"
+        android:text="StartTracking" />
+
+    <TextView
+        android:id="@+id/long_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_lat"
+        android:layout_toRightOf="@+id/text_long"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/GPS_Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/text_long"
+        android:layout_below="@+id/btn_start_tracking"
+        android:text="GPS"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/lat_value_nw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/long_value"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/long_value_nw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/lat_value_nw"
+        android:layout_below="@+id/lat_value_nw"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text_ttff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_long"
+        android:text="Time to First Fix" />
+
+    <TextView
+        android:id="@+id/lat_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/long_value"
+        android:layout_toRightOf="@+id/text_lat"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/ttff_val"
+        android:layout_width="wrap_content"
+        android:layout_height="100dip"
+        android:layout_below="@+id/long_value"
+        android:layout_toLeftOf="@+id/btn_stop_tracking" />
+
+    <Button
+        android:id="@+id/btn_del_data"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/GPS_Header"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/btn_stop_tracking"
+        android:text="DeleteAll" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+     	android:layout_below="@+id/text_ttff"
+    	android:shrinkColumns="*"
+    	android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/MeasurementTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00ff00"
+            android:gravity="center_horizontal">
+            <TextView
+	            android:id="@+id/text_database"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_span="6"
+	            android:gravity="center"
+	            android:text="Measurements Database"
+	            android:textSize="18dp"
+	            android:textStyle="bold" >
+        	</TextView>
+        </TableRow>
+
+      <TableRow
+            android:id="@+id/row_fields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+ 
+        <TextView
+            android:id="@+id/text_prn"
+            android:gravity="center"
+            android:text="PRN"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/text_azimuth"
+            android:gravity="center"
+            android:text="Azimuth"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/text_elevation"
+            android:gravity="center"
+            android:text="Elevation"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+ 
+        <TextView
+            android:id="@+id/text_snr"
+            android:gravity="center"
+            android:text="SNR"
+            android:textStyle="bold"
+            android:typeface="serif" >
+        </TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
